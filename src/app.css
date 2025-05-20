@@ -66,8 +66,8 @@ sub {
   justify-content: space-evenly;
 }
 
-#filler {
+.filler {
   width: 100%;
-  height: 1000px;
+  height: 500px;
 }
 
