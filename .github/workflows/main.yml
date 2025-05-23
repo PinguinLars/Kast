@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: rpi
+    runs-on: [self-hosted, linux, ARM64]
 
     steps:
       - name: Checkout repo
