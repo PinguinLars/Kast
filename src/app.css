@@ -1,5 +1,64 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 
 * {
-  font-family: "JetBrains Mono";
+    font-family: "JetBrains Mono", serif;
+}
+
+.text-box, .intro {
+    height: 400px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: slategray;
+    color: slategray;
+    transition: background-color 0.5s ease, opacity 0.5s ease;
+    opacity: 0.2;
+}
+
+.text-box {
+    /*noinspection CssNoGenericFontName*/
+    font-family: "JetBrains Mono ExtraBold";
+    position: relative;
+    font-size: 2em;
+}
+
+.trans-flag-no-pink-visible {
+    background: linear-gradient(
+            to bottom,
+            #5bcefa 20%, /* light blue */
+            #ffffff 20%,  #ffffff 40%, /* extra white */
+            #ffffff 40%, #ffffff 60%, /* white */
+            #ffffff 60%,  #ffffff 80%, /* extra white */
+            #5bcefa 80% /* light blue */
+    );
+    opacity: 1;
+    color: black;
+}
+
+.trans-flag-visible {
+    background: linear-gradient(
+            to bottom,
+            #5bcefa 20%, /* light blue */
+            #f5a9b8 20%,  #f5a9b8 40%, /* light pink */
+            #ffffff 40%, #ffffff 60%, /* white */
+            #f5a9b8 60%,  #f5a9b8 80%, /* light pink */
+            #5bcefa 80% /* light blue */
+    );
+    opacity: 1;
+    color: black;
+}
+
+.text-box p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.visible {
+    background: linear-gradient(
+            to bottom, #ffffff, #ffffff
+    );
+    opacity: 1;
+    color: black;
 }

@@ -2,6 +2,9 @@
 <script>
   import {onMount} from "svelte";
 
+  let args = new URLSearchParams(window.location.search);
+  let username = args.get("name");
+
   const scrollThreshold = 0.75;
 
   let introShown = false;
@@ -248,58 +251,55 @@
 
 <svelte:window bind:scrollY={y}/>
 
-<div bind:this={introElement} class="intro text-box" class:visible={introShown}>
-  <p>bla bla bla</p>
+<div bind:this={introElement} class="intro" class:visible={introShown}>
+  <div class="heading-one">
+    <p>He {username}</p>
+  </div>
+  <div class="small-text">
+    <p>
+      Kan je dit alsjeblieft niet doorvertellen, bedankt.
+    </p>
+  </div>
+  <p>
+    Dit is best wel moeilijk om te vertellen voor mij, maar ik wil het je toch graag zeggen.
+  </p>
+  <p>
+    Ik voel me:
+  </p>
 </div>
 
 <div bind:this={nietElement} class="niet text-box" class:visible={nietShown}>
-  <p>niet</p>
+  <p><b>niet</b></p>
 </div>
 
 <div bind:this={echtElement} class="echt text-box" class:visible={echtShown}>
-  <p>echt</p>
+  <p><b>echt</b></p>
 </div>
 
 <div bind:this={eenElement1} class="een1 text-box" class:visible={eenShown1}>
-  <p>een</p>
+  <p><b>een</b></p>
 </div>
 
-<div bind:this={jongenElement} class="jongen text-box" class:visible={jongenShown}>
-  <p>jongen</p>
+<div bind:this={jongenElement} class="jongen text-box" class:trans-flag-no-pink-visible={jongenShown}>
+  <p><b>jongen</b></p>
 </div>
 
-<div bind:this={meerElement} class="meer text-box" class:visible={meerShown}>
-  <p>meer,</p>
+<div bind:this={meerElement} class="meer text-box" class:trans-flag-no-pink-visible={meerShown}>
+  <p><b>meer,</b></p>
 </div>
 
-<div bind:this={maarElement} class="maar text-box" class:visible={maarShown}>
-  <p>maar</p>
+<div bind:this={maarElement} class="maar text-box" class:trans-flag-no-pink-visible={maarShown}>
+  <p><b>maar</b></p>
 </div>
 
-<div bind:this={juistElement} class="juist text-box" class:visible={juistShown}>
-  <p>juist</p>
+<div bind:this={juistElement} class="juist text-box" class:trans-flag-no-pink-visible={juistShown}>
+  <p><b>juist</b></p>
 </div>
 
-<div bind:this={eenElement2} class="een2 text-box" class:visible={eenShown2}>
-  <p>een</p>
+<div bind:this={eenElement2} class="een2 text-box" class:trans-flag-no-pink-visible={eenShown2}>
+  <p><b>een</b></p>
 </div>
 
-<div bind:this={meisjeElement} class="meisje text-box" class:visible={meisjeShown}>
-  <p>meisje</p>
+<div bind:this={meisjeElement} class="meisje text-box trans-flag-visible" class:trans-flag-visible={meisjeShown}>
+  <p><b>meisje</b></p>
 </div>
-
-<style>
-  .text-box {
-    height: 400px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: slategray;
-    transition: background-color 0.5s ease, opacity 0.5s ease;
-    opacity: 0.2;
-  }
-
-  .visible {
-    background-color: lightgreen;
-    opacity: 1;
-  }
-</style>
